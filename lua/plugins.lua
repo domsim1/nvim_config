@@ -25,4 +25,6 @@ require('packer').startup(function(use)
   use 'folke/which-key.nvim'
   use 'mfussenegger/nvim-dap'
   use 'folke/zen-mode.nvim'
+  use 'leoluz/nvim-dap-go'
+  use 'rcarriga/nvim-dap-ui'
 end)

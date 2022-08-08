@@ -29,7 +29,7 @@ wk.register({
     name = 'Tree',
     e = { '<cmd>Neotree toggle<cr>', 'Toggle' },
     f = { '<cmd>Neotree focus<cr>', 'Focus' },
-    n = { '<cmd>Neotree buffer<cr>', 'Buffers' },
+    b = { '<cmd>Neotree buffers<cr>', 'Buffers' },
   },
   f = {
     name = 'Find',
@@ -43,9 +43,9 @@ wk.register({
     l = { '<cmd>Telescope diagnostics<cr>', 'LSP Diagnostics' },
     t = { '<cmd>Telescope lsp_type_definitions<cr>', 'Type Definition' },
   },
-  ['.'] = {
+  [';'] = {
     name = 'Debug',
-    b = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
+    [';'] = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
     d = { dap.continue, 'Start/Continue' },
     i = { dap.step_into, 'Step Into' },
     o = { dap.step_out, 'Step Out' },

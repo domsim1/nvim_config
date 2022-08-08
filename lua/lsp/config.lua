@@ -14,14 +14,14 @@ local lsp_flags = {}
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require('lspconfig')['sumneko_lua'].setup{
+require('lspconfig')['sumneko_lua'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = {
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         library = {
@@ -49,6 +49,5 @@ require('lspconfig')['gopls'].setup {
   },
   init_options = {
     usePlaceholders = true
-  }
+  },
 }
-
