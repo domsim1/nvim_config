@@ -1,12 +1,2 @@
-require('nightfox').setup({
-  options = {
-    styles = {
-      keywords = 'italic,bold',
-      types = 'italic',
-      constants = 'bold',
-      conditionals = 'italic,bold',
-    }
-  }
-})
+require('nightfox').setup({})
 vim.cmd('colorscheme terafox')
-
