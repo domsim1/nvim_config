@@ -17,10 +17,12 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'dcampos/nvim-snippy'
   use 'dcampos/cmp-snippy'
   use 'stevearc/aerial.nvim'
   use 'windwp/nvim-autopairs'
   use 'folke/which-key.nvim'
   use 'mfussenegger/nvim-dap'
+  use 'folke/zen-mode.nvim'
 end)

@@ -25,9 +25,9 @@ map('n', '<leader>q', ':qa!<cr>', { desc = 'Quit' })
 local wk = require('which-key')
 local dap = require('dap')
 wk.register({
-  t = {
+  e = {
     name = 'Tree',
-    t = { '<cmd>Neotree toggle<cr>', 'Toggle' },
+    e = { '<cmd>Neotree toggle<cr>', 'Toggle' },
     f = { '<cmd>Neotree focus<cr>', 'Focus' },
     n = { '<cmd>Neotree buffer<cr>', 'Buffers' },
   },
@@ -43,7 +43,7 @@ wk.register({
     l = { '<cmd>Telescope diagnostics<cr>', 'LSP Diagnostics' },
     t = { '<cmd>Telescope lsp_type_definitions<cr>', 'Type Definition' },
   },
-  d = {
+  ['.'] = {
     name = 'Debug',
     b = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
     d = { dap.continue, 'Start/Continue' },
@@ -52,5 +52,14 @@ wk.register({
     s = { dap.step_over, 'Step Over' },
     r = { dap.repl.ope, 'Open REPL' },
   },
-  m = { '<cmd>Mason<cr>', 'Mason' }
+  m = { '<cmd>Mason<cr>', 'Mason' },
+  h = { vim.lsp.buf.hover, 'Hover' },
+  r = { vim.lsp.rename, 'Rename' },
+  d = {
+    name = 'Diagnostics',
+    d = { vim.diagnostic.open_float, 'Open' },
+    ['['] = { vim.diagnostic.goto_prev, 'Prev' },
+    [']'] = { vim.diagnostic.goto_next, 'Next' },
+    a = { vim.lsp.buf.code_action, 'Action' },
+  },
 }, { prefix = '<leader>' })
