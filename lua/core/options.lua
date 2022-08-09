@@ -14,6 +14,7 @@ opt.splitright = true
 opt.splitbelow = true
 opt.termguicolors = true
 opt.cursorline = true
+opt.signcolumn = 'yes'
 
 -- Tabs
 opt.expandtab = true
