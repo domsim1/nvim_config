@@ -1,17 +1,10 @@
 require('nvim-treesitter.configs').setup({
-  ensure_installed = {
-    'lua',
-    'go',
-  },
+  auto_install = true,
   sync_install = false,
   ignore_install = {},
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
-  },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
   },
   autopairs = {
     enable = true,
@@ -24,7 +17,7 @@ require('nvim-treesitter.configs').setup({
   },
   rainbow = {
     enable = true,
-    disable = { "html" },
+    disable = { 'html' },
     extended_mode = false,
     max_file_lines = nil,
   },

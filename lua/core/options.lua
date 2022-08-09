@@ -1,4 +1,3 @@
-local g = vim.g
 local opt = vim.opt
 
 -- General
@@ -30,4 +29,3 @@ opt.synmaxcol = 240
 
 -- Startup
 opt.shortmess:append "sI"
-

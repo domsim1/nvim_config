@@ -1,36 +1,20 @@
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+vim.g.mapleader = ','
+
+local wk_ok, wk = pcall(require, 'which-key')
+if not wk_ok then
+  return
+end
+local dap_ok, dap = pcall(require, 'dap')
+if not dap_ok then
+  return
 end
 
-vim.g.mapleader = ' '
-
-map('', '<up>', '<nop>')
-map('', '<down>', '<nop>')
-map('', '<left>', '<nop>')
-map('', '<right>', '<nop>')
-
-map('i', 'jj', '<esc>')
-map('i', 'kk', '<esc>')
-
-map('n', '<leader>c', ':noh<cr>', { desc = 'Clear Search' })
-
-map('n', '<leader>s', ':w<cr>', { desc = 'Save' })
-
-map('n', '<leader>q', ':qa!<cr>', { desc = 'Quit' })
-
-local wk = require('which-key')
-local dap = require('dap')
 wk.register({
-  e = {
-    name = 'Tree',
-    e = { '<cmd>Neotree toggle<cr>', 'Toggle' },
-    f = { '<cmd>Neotree focus<cr>', 'Focus' },
-    b = { '<cmd>Neotree buffers<cr>', 'Buffers' },
-  },
+  e = { '<cmd>Texplore<cr>', 'File Explore' },
+  w = { '<cmd>w<cr>', 'Save' },
+  q = { '<cmd>q<cr>', 'Close' },
+  ['['] = { '<cmd>bnext<cr>', 'Next Buffer' },
+  [']'] = { '<cmd>bprevious<cr>', 'Prev Buffer' },
   f = {
     name = 'Find',
     f = { '<cmd>Telescope find_files<cr>', 'File' },
@@ -40,7 +24,6 @@ wk.register({
     w = { '<cmd>Telescope lsp_workspace_symbols<cr>', 'Symbol' },
     i = { '<cmd>Telescope lsp_implementations<cr>', 'Implementation' },
     d = { '<cmd>Telescope lsp_definitions<cr>', 'Definition' },
-    l = { '<cmd>Telescope diagnostics<cr>', 'LSP Diagnostics' },
     t = { '<cmd>Telescope lsp_type_definitions<cr>', 'Type Definition' },
   },
   [';'] = {
@@ -52,12 +35,12 @@ wk.register({
     s = { dap.step_over, 'Step Over' },
     r = { dap.repl.ope, 'Open REPL' },
   },
-  m = { '<cmd>Mason<cr>', 'Mason' },
   h = { vim.lsp.buf.hover, 'Hover' },
   r = { vim.lsp.rename, 'Rename' },
   d = {
     name = 'Diagnostics',
-    d = { vim.diagnostic.open_float, 'Open' },
+    l = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
+    h = { vim.diagnostic.open_float, 'Hover' },
     ['['] = { vim.diagnostic.goto_prev, 'Prev' },
     [']'] = { vim.diagnostic.goto_next, 'Next' },
     a = { vim.lsp.buf.code_action, 'Action' },
