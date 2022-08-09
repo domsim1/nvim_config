@@ -1,4 +1,9 @@
-require('nvim-autopairs').setup({
+local ok, ap = pcall(require, 'nvim-autopairs')
+if not ok then
+  return
+end
+
+ap.setup({
   check_ts = true,
   ts_config = {
     lua = { 'string', 'source' },

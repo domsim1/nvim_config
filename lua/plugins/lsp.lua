@@ -1,6 +1,16 @@
-require('mason').setup()
+local mason_ok, mason = pcall(require, 'mason')
+if not mason_ok then
+  return
+end
 
-require('mason-lspconfig').setup({
+mason.setup()
+
+local masonlsp_ok, masonlsp = pcall(require, 'mason-lspconfig')
+if not masonlsp_ok then
+  return
+end
+
+masonlsp.setup({
   ensure_installed = {
     'sumneko_lua',
     'gopls',
@@ -12,9 +22,19 @@ end
 
 local lsp_flags = {}
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local cmplsp_ok, cmpslp = pcall(require, 'cmp_nvim_lsp')
+if not cmplsp_ok then
+  return
+end
 
-require('lspconfig')['sumneko_lua'].setup {
+local capabilities = cmpslp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local lsp_ok, lsp = pcall(require, 'lspconfig')
+if not lsp_ok then
+  return
+end
+
+lsp['sumneko_lua'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
@@ -33,7 +53,7 @@ require('lspconfig')['sumneko_lua'].setup {
   },
 }
 
-require('lspconfig')['gopls'].setup {
+lsp['gopls'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,

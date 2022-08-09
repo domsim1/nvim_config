@@ -1,5 +1,15 @@
-require('dap-go').setup()
-require("dapui").setup({
+local dapgo_ok, dapgo = pcall(require, 'dap-go')
+if not dapgo_ok then
+  return
+end
+
+local dapui_ok, dapui = pcall(require, 'dapui')
+if not dapui_ok then
+  return
+end
+
+dapgo.setup()
+dapui.setup({
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
     -- Use a table to apply multiple mappings
@@ -54,7 +64,12 @@ require("dapui").setup({
     max_type_length = nil, -- Can be integer or nil.
   }
 })
-local dap, dapui = require("dap"), require("dapui")
+
+local dap_ok, dap = pcall(require, 'dap')
+if not dap_ok then
+  return
+end
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end

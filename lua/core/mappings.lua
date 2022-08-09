@@ -1,4 +1,4 @@
-vim.g.mapleader = ','
+vim.g.mapleader = ';'
 
 local wk_ok, wk = pcall(require, 'which-key')
 if not wk_ok then
@@ -10,11 +10,16 @@ if not dap_ok then
 end
 
 wk.register({
-  e = { '<cmd>Texplore<cr>', 'File Explore' },
+  e = {
+    name = 'Explore',
+    e = { '<cmd>NvimTreeFocus<cr>', 'Focus' },
+    t = { '<cmd>NvimTreeToggle<cr>', 'Toggle' },
+    f = { '<cmd>NvimTreeFindFile', 'Find File' },
+  },
   w = { '<cmd>w<cr>', 'Save' },
-  q = { '<cmd>q<cr>', 'Close' },
-  ['['] = { '<cmd>bnext<cr>', 'Next Buffer' },
-  [']'] = { '<cmd>bprevious<cr>', 'Prev Buffer' },
+  q = { '<cmd>bd<cr>', 'Close' },
+  ['['] = { '<cmd>BufferLineCycleNext<cr>', 'Next Buffer' },
+  [']'] = { '<cmd>BufferLineCyclePrev<cr>', 'Prev Buffer' },
   f = {
     name = 'Find',
     f = { '<cmd>Telescope find_files<cr>', 'File' },
@@ -45,4 +50,5 @@ wk.register({
     [']'] = { vim.diagnostic.goto_next, 'Next' },
     a = { vim.lsp.buf.code_action, 'Action' },
   },
+  z = { '<cmd>ZenMode<cr>', 'Zen Mode' },
 }, { prefix = '<leader>' })
