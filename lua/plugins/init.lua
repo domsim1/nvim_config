@@ -41,6 +41,7 @@ require('packer').startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
   use { 'akinsho/bufferline.nvim', tag = 'v2.*' }
+  use 'lewis6991/gitsigns.nvim'
 
   -- Color
   use 'ellisonleao/gruvbox.nvim'
@@ -58,3 +59,4 @@ require('plugins.lsp')
 require('plugins.dap')
 require('plugins.which-key')
 require('plugins.bufferline')
+require('plugins.gitsigns')
