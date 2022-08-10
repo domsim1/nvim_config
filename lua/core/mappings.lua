@@ -51,4 +51,5 @@ wk.register({
     a = { vim.lsp.buf.code_action, 'Action' },
   },
   z = { '<cmd>ZenMode<cr>', 'Zen Mode' },
+  g = { '<cmd>LazyGit<cr>', 'Lazy Git' },
 }, { prefix = '<leader>' })

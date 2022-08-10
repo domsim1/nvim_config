@@ -41,7 +41,10 @@ require('packer').startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
   use { 'akinsho/bufferline.nvim', tag = 'v2.*' }
+
+  -- Git
   use 'lewis6991/gitsigns.nvim'
+  use 'kdheepak/lazygit.nvim'
 
   -- Color
   use 'ellisonleao/gruvbox.nvim'
