@@ -80,7 +80,7 @@ lsp['yamlls'].setup {
   settings = {
     yaml = {
       schemas = {
-        ['https://json.schemastore.org/github-action.json'] = {
+        ['https://json.schemastore.org/github-workflow.json'] = {
           '.github/workflows/*.yml',
           '.github/workflows/*.yaml',
         },
