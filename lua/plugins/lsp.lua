@@ -14,6 +14,7 @@ masonlsp.setup({
   ensure_installed = {
     'sumneko_lua',
     'gopls',
+    'yamlls',
   }
 })
 
@@ -70,4 +71,27 @@ lsp['gopls'].setup {
   init_options = {
     usePlaceholders = true
   },
+}
+
+lsp['yamlls'].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+  settings = {
+    yaml = {
+      schemas = {
+        ['https://json.schemastore.org/github-action.json'] = {
+          '.github/workflows/*.yml',
+          '.github/workflows/*.yaml',
+        },
+        -- GoReleaser Schema currently broken
+        --  ['https://goreleaser.com/static/schema.json'] = {
+        --    '.goreleaser.yaml',
+        --    '.goreleaser.yml',
+        --    'goreleaser.yaml',
+        --    'goreleaser.yml',
+        --  }
+      }
+    }
+  }
 }
