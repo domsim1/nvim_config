@@ -48,7 +48,6 @@ require('packer').startup(function(use)
 
   -- Color
   use 'ellisonleao/gruvbox.nvim'
-  -- use 'xiyaowong/nvim-transparent'
 end)
 
 
@@ -64,4 +63,3 @@ require('plugins.dap')
 require('plugins.which-key')
 require('plugins.bufferline')
 require('plugins.gitsigns')
-require('plugins.transparent')
