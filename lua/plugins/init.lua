@@ -42,6 +42,7 @@ require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use { 'akinsho/bufferline.nvim', tag = 'v2.*' }
   use 'declancm/cinnamon.nvim'
+  use 'glepnir/dashboard-nvim'
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
@@ -65,3 +66,4 @@ require('plugins.which-key')
 require('plugins.bufferline')
 require('plugins.gitsigns')
 require('plugins.cinnamon')
+require('plugins.dashboard')
