@@ -16,8 +16,13 @@ wk.register({
     t = { '<cmd>NvimTreeToggle<cr>', 'Toggle' },
     f = { '<cmd>NvimTreeFindFile', 'Find File' },
   },
+  q = {
+    name = 'Quit',
+    q = { '<cmd>qa<cr>', 'Quit All' },
+    w = { '<cmd>wqa<cr>', 'Quit & Save All' },
+  },
   w = { '<cmd>w<cr>', 'Save' },
-  q = { '<cmd>bd<cr>', 'Close' },
+  c = { '<cmd>bd<cr>', 'Close' },
   ['['] = { '<cmd>BufferLineCycleNext<cr>', 'Next Buffer' },
   [']'] = { '<cmd>BufferLineCyclePrev<cr>', 'Prev Buffer' },
   f = {
@@ -31,9 +36,9 @@ wk.register({
     d = { '<cmd>Telescope lsp_definitions<cr>', 'Definition' },
     t = { '<cmd>Telescope lsp_type_definitions<cr>', 'Type Definition' },
   },
-  [';'] = {
+  ['.'] = {
     name = 'Debug',
-    [';'] = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
+    ['.'] = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
     d = { dap.continue, 'Start/Continue' },
     i = { dap.step_into, 'Step Into' },
     o = { dap.step_out, 'Step Out' },
@@ -44,7 +49,7 @@ wk.register({
   r = { vim.lsp.rename, 'Rename' },
   d = {
     name = 'Diagnostics',
-    l = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
+    d = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
     h = { vim.diagnostic.open_float, 'Hover' },
     ['['] = { vim.diagnostic.goto_prev, 'Prev' },
     [']'] = { vim.diagnostic.goto_next, 'Next' },
@@ -53,3 +58,9 @@ wk.register({
   z = { '<cmd>ZenMode<cr>', 'Zen Mode' },
   g = { '<cmd>LazyGit<cr>', 'Lazy Git' },
 }, { prefix = '<leader>' })
+
+wk.register({
+  [';'] = {
+    [';'] = { '<esc>', 'Normal Mode' }
+  }
+}, { mode = "i" })
