@@ -43,17 +43,23 @@ require('packer').startup(function(use)
   use { 'akinsho/bufferline.nvim', tag = 'v2.*' }
   use 'declancm/cinnamon.nvim'
   use 'glepnir/dashboard-nvim'
+  use "fladson/vim-kitty"
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
   use 'kdheepak/lazygit.nvim'
 
   -- Color
-  use 'ellisonleao/gruvbox.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use {
+    'NvChad/nvim-colorizer.lua',
+    config = function()
+      require 'colorizer'.setup()
+    end
+  }
 end)
 
-
-require('plugins.gruvbox')
+require('plugins.catppuccin')
 require('plugins.lualine')
 require('plugins.nvim-tree')
 require('plugins.telescope')
