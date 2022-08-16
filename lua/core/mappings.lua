@@ -46,7 +46,7 @@ wk.register({
     r = { dap.repl.ope, 'Open REPL' },
   },
   h = { vim.lsp.buf.hover, 'Hover' },
-  r = { vim.lsp.rename, 'Rename' },
+  r = { vim.lsp.buf.rename, 'Rename' },
   d = {
     name = 'Diagnostics',
     d = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
@@ -58,9 +58,3 @@ wk.register({
   z = { '<cmd>ZenMode<cr>', 'Zen Mode' },
   g = { '<cmd>LazyGit<cr>', 'Lazy Git' },
 }, { prefix = '<leader>' })
-
-wk.register({
-  [';'] = {
-    [';'] = { '<esc>', 'Normal Mode' }
-  }
-}, { mode = "i" })
