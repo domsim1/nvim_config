@@ -15,6 +15,7 @@ masonlsp.setup({
     'sumneko_lua',
     'gopls',
     'yamlls',
+    'clangd',
   }
 })
 
@@ -94,4 +95,10 @@ lsp['yamlls'].setup {
       }
     }
   }
+}
+
+lsp['clangd'].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
 }
