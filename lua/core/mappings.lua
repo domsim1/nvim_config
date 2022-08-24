@@ -23,8 +23,8 @@ wk.register({
   },
   w = { '<cmd>w<cr>', 'Save' },
   c = { '<cmd>bd<cr>', 'Close' },
-  ['['] = { '<cmd>BufferLineCycleNext<cr>', 'Next Buffer' },
-  [']'] = { '<cmd>BufferLineCyclePrev<cr>', 'Prev Buffer' },
+  ['['] = { '<cmd>BufferLineCyclePrev<cr>', 'Prev Buffer' },
+  [']'] = { '<cmd>BufferLineCycleNext<cr>', 'Next Buffer' },
   f = {
     name = 'Find',
     f = { '<cmd>Telescope find_files<cr>', 'File' },
@@ -35,6 +35,7 @@ wk.register({
     i = { '<cmd>Telescope lsp_implementations<cr>', 'Implementation' },
     d = { '<cmd>Telescope lsp_definitions<cr>', 'Definition' },
     t = { '<cmd>Telescope lsp_type_definitions<cr>', 'Type Definition' },
+    g = { '<cmd>Telescope grep_string<cr>', 'Word' },
   },
   ['.'] = {
     name = 'Debug',
