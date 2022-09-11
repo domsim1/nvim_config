@@ -16,13 +16,9 @@ masonlsp.setup({
     'gopls',
     'yamlls',
     'clangd',
+    'tsserver',
   }
 })
-
-local on_attach = function(client, bufnr)
-end
-
-local lsp_flags = {}
 
 local cmplsp_ok, cmpslp = pcall(require, 'cmp_nvim_lsp')
 if not cmplsp_ok then
@@ -37,8 +33,6 @@ if not lsp_ok then
 end
 
 lsp['sumneko_lua'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
   capabilities = capabilities,
   settings = {
     Lua = {
@@ -56,8 +50,6 @@ lsp['sumneko_lua'].setup {
 }
 
 lsp['gopls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
   capabilities = capabilities,
   settings = {
     gopls = {
@@ -75,8 +67,6 @@ lsp['gopls'].setup {
 }
 
 lsp['yamlls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
   capabilities = capabilities,
   settings = {
     yaml = {
@@ -85,20 +75,19 @@ lsp['yamlls'].setup {
           '.github/workflows/*.yml',
           '.github/workflows/*.yaml',
         },
-        -- GoReleaser Schema currently broken
-        --  ['https://goreleaser.com/static/schema.json'] = {
-        --    '.goreleaser.yaml',
-        --    '.goreleaser.yml',
-        --    'goreleaser.yaml',
-        --    'goreleaser.yml',
-        --  }
       }
     }
   }
 }
 
 lsp['clangd'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
   capabilities = capabilities,
+}
+
+lsp['tsserver'].setup {
+  capabilities = capabilities,
+}
+
+lsp['zls'].setup {
+  capabilities = capabilities
 }
