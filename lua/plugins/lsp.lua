@@ -91,3 +91,7 @@ lsp['tsserver'].setup {
 lsp['zls'].setup {
   capabilities = capabilities
 }
+
+lsp['cmake'].setup {
+  capabilities = capabilities
+}
