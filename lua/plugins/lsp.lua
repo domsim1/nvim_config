@@ -17,6 +17,7 @@ masonlsp.setup({
     'yamlls',
     'clangd',
     'tsserver',
+    'rust_analyzer',
   }
 })
 
@@ -93,5 +94,9 @@ lsp['zls'].setup {
 }
 
 lsp['cmake'].setup {
+  capabilities = capabilities
+}
+
+lsp['rust_analyzer'].setup {
   capabilities = capabilities
 }
