@@ -18,8 +18,8 @@ catppuccin.setup({
     path = vim.fn.stdpath "cache" .. "/catppuccin",
   },
   styles = {
-    comments = { "italic" },
-    conditionals = { "italic" },
+    comments = {},
+    conditionals = {},
     loops = {},
     functions = {},
     keywords = {},
