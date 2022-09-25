@@ -18,6 +18,7 @@ masonlsp.setup({
     'clangd',
     'tsserver',
     'rust_analyzer',
+    'pyright',
   }
 })
 
@@ -98,5 +99,9 @@ lsp['cmake'].setup {
 }
 
 lsp['rust_analyzer'].setup {
+  capabilities = capabilities
+}
+
+lsp['pyright'].setup {
   capabilities = capabilities
 }
