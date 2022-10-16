@@ -19,6 +19,8 @@ masonlsp.setup({
     'tsserver',
     'rust_analyzer',
     'pyright',
+    'cssls',
+    'html',
   }
 })
 
@@ -103,5 +105,13 @@ lsp['rust_analyzer'].setup {
 }
 
 lsp['pyright'].setup {
+  capabilities = capabilities
+}
+
+lsp['cssls'].setup {
+  capabilities = capabilities
+}
+
+lsp['html'].setup {
   capabilities = capabilities
 }
