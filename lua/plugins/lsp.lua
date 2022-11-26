@@ -29,7 +29,7 @@ if not cmplsp_ok then
   return
 end
 
-local capabilities = cmpslp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmpslp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local lsp_ok, lsp = pcall(require, 'lspconfig')
 if not lsp_ok then
