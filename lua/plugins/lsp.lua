@@ -10,19 +10,7 @@ if not masonlsp_ok then
   return
 end
 
-masonlsp.setup({
-  ensure_installed = {
-    'sumneko_lua',
-    'gopls',
-    'yamlls',
-    'clangd',
-    'tsserver',
-    'rust_analyzer',
-    'pyright',
-    'cssls',
-    'html',
-  }
-})
+masonlsp.setup()
 
 local cmplsp_ok, cmpslp = pcall(require, 'cmp_nvim_lsp')
 if not cmplsp_ok then

@@ -20,12 +20,6 @@ config.setup({
   indent = {
     enable = false,
   },
-  rainbow = {
-    enable = true,
-    disable = { 'html' },
-    extended_mode = false,
-    max_file_lines = nil,
-  },
   autotag = {
     enable = true,
   },

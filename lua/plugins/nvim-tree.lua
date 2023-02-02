@@ -14,7 +14,7 @@ tree.setup({
     },
   },
   renderer = {
-    group_empty = true,
+    group_empty = false,
     icons = {
       glyphs = {
         git = {

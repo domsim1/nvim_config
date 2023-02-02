@@ -8,7 +8,7 @@ opt.completeopt = 'menu,menuone,noselect'
 
 -- UI
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 -- opt.showmatch = true
 opt.splitright = true
 opt.splitbelow = true

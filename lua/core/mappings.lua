@@ -37,13 +37,13 @@ wk.register({
     t = { '<cmd>Telescope lsp_type_definitions<cr>', 'Type Definition' },
     g = { '<cmd>Telescope grep_string<cr>', 'Word' },
   },
-  ['.'] = {
+  [';'] = {
     name = 'Debug',
-    ['.'] = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
-    d = { dap.continue, 'Start/Continue' },
-    i = { dap.step_into, 'Step Into' },
-    o = { dap.step_out, 'Step Out' },
-    s = { dap.step_over, 'Step Over' },
+    [';'] = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
+    s = { dap.continue, 'Start/Continue' },
+    q = { dap.step_into, 'Step Into' },
+    a = { dap.step_out, 'Step Out' },
+    w = { dap.step_over, 'Step Over' },
     r = { dap.repl.ope, 'Open REPL' },
   },
   h = { vim.lsp.buf.hover, 'Hover' },
@@ -57,5 +57,4 @@ wk.register({
     a = { vim.lsp.buf.code_action, 'Action' },
   },
   z = { '<cmd>ZenMode<cr>', 'Zen Mode' },
-  g = { '<cmd>LazyGit<cr>', 'Lazy Git' },
 }, { prefix = '<leader>' })
