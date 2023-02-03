@@ -52,6 +52,10 @@ require('packer').startup(function(use)
       require 'colorizer'.setup()
     end
   }
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
 end)
 
 require('plugins.catppuccin')
