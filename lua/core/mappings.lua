@@ -14,7 +14,7 @@ wk.register({
     name = 'Explore',
     e = { '<cmd>NvimTreeFocus<cr>', 'Focus' },
     t = { '<cmd>NvimTreeToggle<cr>', 'Toggle' },
-    f = { '<cmd>NvimTreeFindFile', 'Find File' },
+    f = { '<Cmd>NvimTreeFindFile<CR>', 'Find File' },
   },
   q = {
     name = 'Quit',

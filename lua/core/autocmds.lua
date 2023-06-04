@@ -14,4 +14,7 @@ autocmd('BufWritePre', {
   command = ":%s/\\s\\+$//e"
 })
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+autocmd('BufWritePre', {
+  pattern = '*',
+  command = ":lua vim.lsp.buf.format()"
+})
