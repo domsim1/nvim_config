@@ -103,3 +103,7 @@ lsp['cssls'].setup {
 lsp['html'].setup {
   capabilities = capabilities
 }
+
+lsp["ocamllsp"].setup {
+  capabilities = capabilities
+}
