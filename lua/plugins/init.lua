@@ -35,11 +35,6 @@ require('packer').startup(function(use)
 
   -- QOL & UI
   use 'folke/which-key.nvim'
-  use 'folke/zen-mode.nvim'
-  use 'kyazdani42/nvim-tree.lua'
-  use 'nvim-lualine/lualine.nvim'
-  use { 'akinsho/bufferline.nvim', tag = 'v3.*' }
-  use "fladson/vim-kitty"
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
@@ -59,13 +54,10 @@ require('packer').startup(function(use)
 end)
 
 require('plugins.catppuccin')
-require('plugins.lualine')
 require('plugins.telescope')
 require('plugins.cmp')
 require('plugins.treesitter')
-require('plugins.nvim-tree')
 require('plugins.lsp')
 require('plugins.dap')
 require('plugins.which-key')
-require('plugins.bufferline')
 require('plugins.gitsigns')
