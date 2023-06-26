@@ -2,7 +2,6 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Required
-  use 'kyazdani42/nvim-web-devicons'
   use 'MunifTanjim/nui.nvim'
   use 'nvim-lua/plenary.nvim'
 

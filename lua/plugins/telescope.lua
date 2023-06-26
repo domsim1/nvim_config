@@ -6,8 +6,7 @@ end
 local actions = require 'telescope.actions'
 telescope.setup({
   defaults = {
-
-    prompt_prefix = ' ',
+    prompt_prefix = '/',
     selection_caret = '❯ ',
     path_display = { 'truncate' },
     selection_strategy = 'reset',
@@ -51,8 +50,8 @@ telescope.setup({
         ['<PageUp>'] = actions.results_scrolling_up,
         ['<PageDown>'] = actions.results_scrolling_down,
 
-        ['<Tab>'] = actions.toggle_selection + actions.move_selection_worse,
-        ['<S-Tab>'] = actions.toggle_selection + actions.move_selection_better,
+        ['<Tab>'] = actions.move_selection_next,
+        ['<S-Tab>'] = actions.move_selection_previous,
         ['<C-q>'] = actions.send_to_qflist + actions.open_qflist,
         ['<M-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
         ['<C-l>'] = actions.complete_tag,
