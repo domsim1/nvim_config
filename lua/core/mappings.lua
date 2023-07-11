@@ -22,8 +22,9 @@ wk.register({
   },
   w = { '<cmd>w<cr>', 'Save' },
   c = { '<cmd>bd<cr>', 'Close' },
-  z = { '<cmd>bp<cr>', 'Prev Buffer' },
-  x = { '<cmd>bn<cr>', 'Next Buffer' },
+  ['['] = { '<cmd>bp<cr>', 'Prev Buffer' },
+  [']'] = { '<cmd>bn<cr>', 'Next Buffer' },
+  p = { '<cmd>set paste!<cr>', 'Toggle Paste Mode' },
   f = {
     name = 'Find',
     f = { '<cmd>Telescope find_files<cr>', 'File' },
@@ -54,6 +55,7 @@ wk.register({
     h = { vim.diagnostic.open_float, 'Hover' },
     ['['] = { vim.diagnostic.goto_prev, 'Prev' },
     [']'] = { vim.diagnostic.goto_next, 'Next' },
+
     a = { vim.lsp.buf.code_action, 'Action' },
   },
 }, { prefix = '<leader>' })

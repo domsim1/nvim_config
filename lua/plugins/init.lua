@@ -39,7 +39,7 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   -- Color
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'rebelot/kanagawa.nvim'
   use {
     'NvChad/nvim-colorizer.lua',
     config = function()
@@ -52,7 +52,7 @@ require('packer').startup(function(use)
   }
 end)
 
-require('plugins.catppuccin')
+require('plugins.kanagawa')
 require('plugins.telescope')
 require('plugins.cmp')
 require('plugins.treesitter')
