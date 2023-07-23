@@ -12,9 +12,8 @@ end
 wk.register({
   e = {
     name = 'Explore',
-    e = { '<cmd>NvimTreeFocus<cr>', 'Focus' },
-    t = { '<cmd>NvimTreeToggle<cr>', 'Toggle' },
-    f = { '<Cmd>NvimTreeFindFile<CR>', 'Find File' },
+    e = { '<cmd>Explore %:p:h<cr>', 'Current Directory' },
+    t = { '<cmd>Explore<cr>', 'Working Directory' },
   },
   q = {
     name = 'Quit',
@@ -23,8 +22,9 @@ wk.register({
   },
   w = { '<cmd>w<cr>', 'Save' },
   c = { '<cmd>bd<cr>', 'Close' },
-  ['['] = { '<cmd>BufferLineCyclePrev<cr>', 'Prev Buffer' },
-  [']'] = { '<cmd>BufferLineCycleNext<cr>', 'Next Buffer' },
+  ['['] = { '<cmd>bp<cr>', 'Prev Buffer' },
+  [']'] = { '<cmd>bn<cr>', 'Next Buffer' },
+  p = { '<cmd>set paste!<cr>', 'Toggle Paste Mode' },
   f = {
     name = 'Find',
     f = { '<cmd>Telescope find_files<cr>', 'File' },
@@ -35,15 +35,16 @@ wk.register({
     i = { '<cmd>Telescope lsp_implementations<cr>', 'Implementation' },
     d = { '<cmd>Telescope lsp_definitions<cr>', 'Definition' },
     t = { '<cmd>Telescope lsp_type_definitions<cr>', 'Type Definition' },
-    g = { '<cmd>Telescope grep_string<cr>', 'Word' },
+    g = { '<cmd>Telescope grep_string<cr>', 'Grep String' },
+    b = { '<cmd>Telescope buffers<cr>', 'Buffers' }
   },
   [';'] = {
     name = 'Debug',
     [';'] = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
     s = { dap.continue, 'Start/Continue' },
-    q = { dap.step_into, 'Step Into' },
-    a = { dap.step_out, 'Step Out' },
-    w = { dap.step_over, 'Step Over' },
+    i = { dap.step_into, 'Step Into' },
+    u = { dap.step_out, 'Step Out' },
+    o = { dap.step_over, 'Step Over' },
     r = { dap.repl.ope, 'Open REPL' },
   },
   h = { vim.lsp.buf.hover, 'Hover' },
@@ -54,7 +55,7 @@ wk.register({
     h = { vim.diagnostic.open_float, 'Hover' },
     ['['] = { vim.diagnostic.goto_prev, 'Prev' },
     [']'] = { vim.diagnostic.goto_next, 'Next' },
+
     a = { vim.lsp.buf.code_action, 'Action' },
   },
-  z = { '<cmd>ZenMode<cr>', 'Zen Mode' },
 }, { prefix = '<leader>' })

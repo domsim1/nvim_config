@@ -31,3 +31,7 @@ opt.synmaxcol = 240
 
 -- Startup
 opt.shortmess:append "sI"
+
+-- Netrw Config
+vim.g.netrw_banner = 0
+vim.g.netrw_keepdir = 0
