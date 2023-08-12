@@ -39,7 +39,7 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   -- Color
-  use 'rebelot/kanagawa.nvim'
+  use { "ellisonleao/gruvbox.nvim" }
   use {
     'NvChad/nvim-colorizer.lua',
     config = function()
