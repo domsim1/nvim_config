@@ -24,8 +24,7 @@ if not lsp_ok then
   return
 end
 
-lsp['lua_ls'].setup {
-  capabilities = capabilities,
+local lua_ls_config = {
   settings = {
     Lua = {
       diagnostics = {
@@ -41,7 +40,7 @@ lsp['lua_ls'].setup {
   },
 }
 
-lsp['gopls'].setup {
+local gopls_config = {
   capabilities = capabilities,
   settings = {
     gopls = {
@@ -58,52 +57,30 @@ lsp['gopls'].setup {
   },
 }
 
-lsp['yamlls'].setup {
-  capabilities = capabilities,
-  settings = {
-    yaml = {
-      schemas = {
-        ['https://json.schemastore.org/github-workflow.json'] = {
-          '.github/workflows/*.yml',
-          '.github/workflows/*.yaml',
-        },
-      }
+local servers = {
+  { 'lua_ls',       lua_ls_config },
+  { 'gopls',        gopls_config },
+  { 'clangd' },
+  { 'tsserver' },
+  { 'cmake' },
+  { 'rust_analyzer' },
+  { 'pyright' },
+  { 'html' },
+  { 'cssls' },
+  { 'ocamllsp' },
+}
+
+for _, server in pairs(servers) do
+  local config = lsp[server[1]]
+  if (vim.fn.executable(config.document_config.default_config.cmd[1])) == 1 then
+    local setup_config = {
+      capabilities = capabilities
     }
-  }
-}
-
-lsp['clangd'].setup {
-  capabilities = capabilities,
-}
-
-lsp['tsserver'].setup {
-  capabilities = capabilities,
-}
-
-lsp['zls'].setup {
-  capabilities = capabilities
-}
-
-lsp['cmake'].setup {
-  capabilities = capabilities
-}
-
-lsp['rust_analyzer'].setup {
-  capabilities = capabilities
-}
-
-lsp['pyright'].setup {
-  capabilities = capabilities
-}
-
-lsp['cssls'].setup {
-  capabilities = capabilities
-}
-
-lsp['html'].setup {
-  capabilities = capabilities
-}
-
-lsp["ocamllsp"].setup {
-  capabilities = capabilities
-}
+    for k, v in pairs(server) do
+      if type(k) ~= 'number' then
+        setup_config[k] = v
+      end
+    end
+    config.setup(setup_config)
+  end
+end
