@@ -61,7 +61,7 @@ local servers = {
   { 'lua_ls',       lua_ls_config },
   { 'gopls',        gopls_config },
   { 'clangd' },
-  { 'tsserver' },
+  { 'eslint' },
   { 'cmake' },
   { 'rust_analyzer' },
   { 'pyright' },
