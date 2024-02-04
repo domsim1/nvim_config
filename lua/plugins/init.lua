@@ -24,7 +24,6 @@ require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
 
   -- Treesitter
-  use 'windwp/nvim-ts-autotag'
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Debug
