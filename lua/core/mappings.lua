@@ -59,3 +59,9 @@ wk.register({
     a = { vim.lsp.buf.code_action, 'Action' },
   },
 }, { prefix = '<leader>' })
+
+vim.keymap.set("n", "<tab>", ">>")
+vim.keymap.set("n", "<s-tab>", "<<")
+
+vim.keymap.set("v", "<tab>", ">gv")
+vim.keymap.set("v", "<s-tab>", "<gv")
