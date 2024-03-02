@@ -27,7 +27,7 @@ wk.register({
   p = { '<cmd>set paste!<cr>', 'Toggle Paste Mode' },
   f = {
     name = 'Find',
-    f = { '<cmd>Telescope find_files<cr>', 'File' },
+    f = { '<cmd>TelescopeFindFileRoot<cr>', 'File' },
     o = { '<cmd>Telescope oldfiles<cr>', 'Recent File' },
     r = { '<cmd>Telescope lsp_references<cr>', 'Reference' },
     s = { '<cmd>Telescope lsp_document_symbols<cr>', 'Document Symbol' },
@@ -35,7 +35,7 @@ wk.register({
     i = { '<cmd>Telescope lsp_implementations<cr>', 'Implementation' },
     d = { '<cmd>Telescope lsp_definitions<cr>', 'Definition' },
     t = { '<cmd>Telescope lsp_type_definitions<cr>', 'Type Definition' },
-    g = { '<cmd>Telescope grep_string<cr>', 'Grep String' },
+    g = { '<cmd>TelescopeGrepStringRoot<cr>', 'Grep String' },
     b = { '<cmd>Telescope buffers<cr>', 'Buffers' }
   },
   [';'] = {

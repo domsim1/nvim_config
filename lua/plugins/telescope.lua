@@ -3,6 +3,31 @@ if not telescope_ok then
   return
 end
 
+local starting_cwd = vim.fn.getcwd()
+
+local builtin = require 'telescope.builtin'
+local telescope_find_file_root = function(opts)
+  opts.cwd = starting_cwd
+  builtin.find_files(opts)
+end
+
+local telescope_grep_root = function(opts)
+  opts.cwd = starting_cwd
+  builtin.grep_string(opts)
+end
+
+vim.api.nvim_create_user_command(
+  'TelescopeFindFileRoot',
+  telescope_find_file_root,
+  { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+  'TelescopeGrepStringRoot',
+  telescope_grep_root,
+  { nargs = 0 }
+)
+
 local actions = require 'telescope.actions'
 telescope.setup({
   defaults = {
