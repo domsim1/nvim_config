@@ -1,6 +1,4 @@
 # NVIM CONFIG
 
-My nvim config.
-
-requires packer.
+it is what is.
 
