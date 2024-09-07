@@ -9,7 +9,6 @@ opt.completeopt = 'menu,menuone,noselect'
 -- UI
 opt.number = true
 opt.relativenumber = false
--- opt.showmatch = true
 opt.splitright = true
 opt.splitbelow = true
 opt.termguicolors = true
@@ -23,7 +22,6 @@ opt.tabstop = 2
 opt.smartindent = true
 
 -- Performance
-opt.hidden = true
 opt.history = 100
 opt.lazyredraw = true
 opt.synmaxcol = 240

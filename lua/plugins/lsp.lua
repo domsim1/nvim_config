@@ -63,7 +63,7 @@ local servers = {
   { 'clangd' },
   { 'bashls' },
   { 'eslint' },
-  { 'tsserver' },
+  { 'vtsls' },
   { 'denols' },
   { 'cmake' },
   { 'rust_analyzer' },
