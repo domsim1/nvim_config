@@ -15,6 +15,8 @@ syntax match ghoulOperator /\*/
 syntax match ghoulOperator /\//
 syntax match ghoulOperator />/
 syntax match ghoulOperator /</
+syntax match ghoulOperator /&&/
+syntax match ghoulOperator /||/
 
 
 syntax keyword ghoulConditional if else
