@@ -3,7 +3,7 @@ if exists("b:current_syntax")
 endif
 
 syntax match ghoulIdentifier /\<\w\+\>/
-syntax match ghoulFunction /\<\v\a+(\()@=/
+syntax match ghoulFunction /\<\v\w+(\()@=/
 
 syntax match ghoulOperator /+/
 syntax match ghoulOperator /-/
