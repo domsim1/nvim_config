@@ -2,21 +2,21 @@ if exists("b:current_syntax")
   finish
 endif
 
-syntax match ghoulIdentifier /\<\a\+\>/
+syntax match ghoulIdentifier /\<\w\+\>/
 syntax match ghoulFunction /\<\v\a+(\()@=/
 
 syntax match ghoulOperator /+/
 syntax match ghoulOperator /-/
 syntax match ghoulOperator /=/
-syntax match ghoulOperator /!=/
-syntax match ghoulOperator />=/
-syntax match ghoulOperator /<=/
+syntax match ghoulOperator /!/
 syntax match ghoulOperator /\*/
 syntax match ghoulOperator /\//
 syntax match ghoulOperator />/
 syntax match ghoulOperator /</
-syntax match ghoulOperator /&&/
-syntax match ghoulOperator /||/
+syntax match ghoulOperator /&/
+syntax match ghoulOperator /|/
+syntax match ghoulOperator /\^/
+syntax match ghoulOperator /\~/
 
 
 syntax keyword ghoulConditional if else
