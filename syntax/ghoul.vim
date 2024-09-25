@@ -27,7 +27,7 @@ syntax keyword ghoulBoolean true false
 syntax region ghoulString start=/"/ end=/"/
 
 syntax match ghoulKeyword /:/
-syntax keyword ghoulKeyword break
+syntax keyword ghoulKeyword break continue in
 syntax match ghoulClass /:;/
 syntax match ghoulKeyword /::/
 syntax match ghoulStatement /->/
