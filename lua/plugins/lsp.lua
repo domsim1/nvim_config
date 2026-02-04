@@ -2,7 +2,6 @@ local mason_ok, mason = pcall(require, 'mason')
 if not mason_ok then
   return
 end
-
 mason.setup()
 
 local masonlsp_ok, masonlsp = pcall(require, 'mason-lspconfig')
@@ -10,21 +9,22 @@ if not masonlsp_ok then
   return
 end
 
-masonlsp.setup()
+masonlsp.setup({
+  automatic_installation = false,
+})
 
-local cmplsp_ok, cmpslp = pcall(require, 'cmp_nvim_lsp')
-if not cmplsp_ok then
-  return
+local cmplsp_ok, cmplsp = pcall(require, 'cmp_nvim_lsp')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+if cmplsp_ok then
+  capabilities = cmplsp.default_capabilities(capabilities)
 end
 
-local capabilities = cmpslp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+vim.lsp.config('*', {
+  capabilities = capabilities,
+})
 
-local lsp_ok, lsp = pcall(require, 'lspconfig')
-if not lsp_ok then
-  return
-end
-
-local lua_ls_config = {
+-- Configure lua_ls
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
@@ -38,10 +38,9 @@ local lua_ls_config = {
       },
     },
   },
-}
+})
 
-local gopls_config = {
-  capabilities = capabilities,
+vim.lsp.config('gopls', {
   settings = {
     gopls = {
       experimentalPostfixCompletions = true,
@@ -53,39 +52,12 @@ local gopls_config = {
     },
   },
   init_options = {
-    usePlaceholders = true
+    usePlaceholders = true,
   },
-}
+})
 
-local servers = {
-  { 'lua_ls',       lua_ls_config },
-  { 'gopls',        gopls_config },
-  { 'clangd' },
-  { 'bashls' },
-  { 'eslint' },
-  { 'vtsls' },
-  { 'denols' },
-  { 'cmake' },
-  { 'rust_analyzer' },
-  { 'pyright' },
-  { 'html' },
-  { 'cssls' },
-  { 'ocamllsp' },
-}
+local installed_servers = masonlsp.get_installed_servers()
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-for _, server_data in pairs(servers) do
-  local name = server_data[1]
-
-  vim.lsp.config(name, {
-    capabilities = capabilities,
-    settings = server_data.settings,
-    filetypes = server_data.filetypes,
-    root_markers = server_data.root_markers,
-    cmd = server_data.cmd,
-  })
-
-  vim.lsp.enable(name)
+if #installed_servers > 0 then
+  vim.lsp.enable(installed_servers)
 end
-
