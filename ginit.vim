@@ -1,7 +1,7 @@
 set mouse=a
 
 if exists(':GuiFont')
-  GuiFont CaskaydiaCove NF:h14
+  GuiFont FiraCode Nerd Font:h14
 endif
 
 if exists('g:neovide')

@@ -73,17 +73,19 @@ local servers = {
   { 'ocamllsp' },
 }
 
-for _, server in pairs(servers) do
-  local config = lsp[server[1]]
-  if (vim.fn.executable(config.document_config.default_config.cmd[1])) == 1 then
-    local setup_config = {
-      capabilities = capabilities
-    }
-    for k, v in pairs(server) do
-      if type(k) ~= 'number' then
-        setup_config[k] = v
-      end
-    end
-    config.setup(setup_config)
-  end
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+for _, server_data in pairs(servers) do
+  local name = server_data[1]
+
+  vim.lsp.config(name, {
+    capabilities = capabilities,
+    settings = server_data.settings,
+    filetypes = server_data.filetypes,
+    root_markers = server_data.root_markers,
+    cmd = server_data.cmd,
+  })
+
+  vim.lsp.enable(name)
 end
+

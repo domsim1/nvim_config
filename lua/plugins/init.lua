@@ -36,7 +36,6 @@ require("lazy").setup({
   'lewis6991/gitsigns.nvim',
 
   -- Color
-  'rebelot/kanagawa.nvim',
   {
     'NvChad/nvim-colorizer.lua',
     config = function()
@@ -67,7 +66,6 @@ require("lazy").setup({
   },
 })
 
-require('plugins.kanagawa')
 require('plugins.telescope')
 require('plugins.cmp')
 require('plugins.treesitter')

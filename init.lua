@@ -11,6 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.g.dracula_colorterm = 0
+vim.cmd.colorscheme("dracula_pro")
+
 require('core.options')
 require('plugins.init')
 require('core.mappings')
